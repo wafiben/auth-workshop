@@ -1,8 +1,11 @@
 const connectDb = require("./config/connectDb");
 const express = require("express");
 const app = express();
-const port = 9000;
+const articleRoute = require("./routes/articleRoute");
+const adminRoute = require("./routes/adminRoute");
 const authRout = require("./routes/authRoute");
+const port = 9000;
+
 app.use(express.json());
 app.listen(port, (e) => {
   e
@@ -11,3 +14,5 @@ app.listen(port, (e) => {
 });
 connectDb();
 app.use("/api", authRout);
+app.use("/api", articleRoute);
+app.use("/api", adminRoute);
