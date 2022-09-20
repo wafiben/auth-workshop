@@ -4,7 +4,10 @@ const app = express();
 const articleRoute = require("./routes/articleRoute");
 const adminRoute = require("./routes/adminRoute");
 const authRout = require("./routes/authRoute");
+const cors = require("cors");
 const port = 9000;
+
+app.use(cors());
 
 app.use(express.json());
 app.listen(port, (e) => {

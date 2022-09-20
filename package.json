@@ -1,0 +1,22 @@
+{
+  "name": "auth-workshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server":"cd server && nodemon index.js",
+    "client":"cd client && npm start",
+    "start": "concurrently \"npm run client\" \"npm run server\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wafiben/auth-workshop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wafiben/auth-workshop/issues"
+  },
+  "homepage": "https://github.com/wafiben/auth-workshop#readme"
+}
