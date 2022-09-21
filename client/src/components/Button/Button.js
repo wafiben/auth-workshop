@@ -10,13 +10,12 @@ function CutomButton({ action, variant }) {
   const dispatch = useDispatch();
   let navigate = useNavigate();
   const handleClick = () => {
-    if (action === "logout" || action === "home") {
+    if (action === "logout" && localStorage.getItem("token")) {
       dispatch(logOut());
       navigate("/");
+    } else if (action === "home") {
+      navigate("/");
     } else {
-      /*  if (action === "home") {
-    
-    } */
       navigate(`/${action}`);
     }
   };

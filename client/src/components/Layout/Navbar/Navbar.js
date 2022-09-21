@@ -19,7 +19,8 @@ function CustomNavbar() {
           {connected ? (
             <>
               <CutomButton action="logout" variant="danger" />
-              <CutomButton action="admin" />
+              <CutomButton action="admin" variant="primary" />
+              <CutomButton action="add" variant="primary" />
             </>
           ) : (
             <CutomButton action="sign-in" />
