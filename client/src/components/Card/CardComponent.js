@@ -7,7 +7,14 @@ function CardComponent({ elt, operation }) {
     <Card style={{ width: "18rem" }}>
       <Card.Body>
         {operation === "getArticle" && (
-          <Card.Title> {elt.nameOfArticle} </Card.Title>
+          <>
+            <img
+              src={elt.selectedFile && `/ImageProducts/${elt.selectedFile}`}
+              alt={elt.selectedFile && `${elt.nameOfArticle}`}
+              width="50px"
+            />
+            <Card.Title> {elt.nameOfArticle} </Card.Title>
+          </>
         )}
         {operation === "getUsers" && (
           <>

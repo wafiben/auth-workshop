@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import FormInfoArtcile from "../../components/FormInfoArtcile/FormInfoArtcile";
 
 function Add() {
-  return (
-    <div>Add</div>
-  )
+  return <FormInfoArtcile />;
 }
 
-export default Add
+export default Add;

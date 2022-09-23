@@ -8,6 +8,7 @@ import AuthComponent from "./Pages/Auth/AuthComponent";
 import Admin from "./Pages/Admin/Admin";
 import Add from "./Pages/Add/Add";
 import PrivateRoute from "./components/PrivateRoute";
+import MyPosts from "./Pages/Myposts/MyPosts";
 
 function App() {
   return (
@@ -30,6 +31,14 @@ function App() {
             element={
               <PrivateRoute>
                 <Add />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/my-posts"
+            element={
+              <PrivateRoute>
+                <MyPosts />
               </PrivateRoute>
             }
           />

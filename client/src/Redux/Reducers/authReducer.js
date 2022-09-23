@@ -6,7 +6,10 @@ const AuthReducer = (state = initState, action) => {
     case LOGIN:
       localStorage.setItem("token", action.payload.token);
       return { ...state, user: action.payload.user, isAuth: true };
-    case USER_FAIL,LOG_OUT:
+    case USER_FAIL:
+      localStorage.clear();
+      return { ...state, user: null, isAuth: false };
+    case LOG_OUT:
       localStorage.clear();
       return { ...state, user: null, isAuth: false };
     default:

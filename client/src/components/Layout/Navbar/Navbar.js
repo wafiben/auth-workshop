@@ -6,8 +6,9 @@ import CutomButton from "../../Button/Button";
 import { useSelector } from "react-redux";
 
 function CustomNavbar() {
-  const connected = useSelector((state) => state.AuthReducer.isAuth);
+  const { user, isAuth } = useSelector((state) => state.AuthReducer);
   const token = localStorage.getItem("token");
+  console.log(user);
 
   return (
     <Navbar bg="light" variant="light">
@@ -16,11 +17,14 @@ function CustomNavbar() {
           className="me-auto"
           style={{ display: "flex", justifyContent: "space-around" }}
         >
-          {connected ? (
+          {isAuth || token ? (
             <>
               <CutomButton action="logout" variant="danger" />
-              <CutomButton action="admin" variant="primary" />
+              {user.role === 1 && (
+                <CutomButton action="admin" variant="primary" />
+              )}
               <CutomButton action="add" variant="primary" />
+              <CutomButton action="my-posts" variant="primary" />
             </>
           ) : (
             <CutomButton action="sign-in" />

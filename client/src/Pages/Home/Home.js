@@ -5,9 +5,20 @@ import useFetch from "../../hooks/useFetch";
 function Home() {
   const data = useFetch("http://localhost:9000/api");
   console.log(data);
-
+  useEffect(() => {
+    const a = window.setTimeout(function () {
+      window.location.reload();
+    }, 3000);
+    clearTimeout(a);
+  }, []);
   return (
-    <div style={{ display: "flex", justifyContent: "space-around" }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-around",
+        flexWrap: "wrap",
+      }}
+    >
       {data
         ? data.artciles.map((elt) => (
             <CardComponent elt={elt} key={elt._id} operation={"getArticle"} />
